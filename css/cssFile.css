@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --min-up: 1px;
+}
+:root{
+    --min-down: 1px;
+}
+
+.fr-header{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: serif;
+    margin: 10px 0;
+}
+
+.con-snak{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100hv;
+    height: 100vh;
+    background-color: #121A1F;
+}
+.con-snak .containner_Win{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #4caf50bf;
+    height: 100vh;
+    width: 100%;
+    z-index: 7898;
+    display: none;
+}
+.con-snak .containner_Win.win{
+    display: block;
+}
+.con-snak .containner_Win .state_game{
+    background: #009688;
+    width: 400px;
+    height: 200px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    transition: all .11ms ease-in-out;
+}
+
+.setting{
+    /* background: #efefef; */
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    transform: translateX(0px);
+    transition: all .6ms ease-in-out;
+    z-index: 67;
+}
+.setting.act{
+    transition: all .6ms ease-in-out;
+    transform: translateX(124px);
+}
+.setting span{
+    width: 100%;
+    background: #fff;;
+    height: 3px;
+    display: block;
+    margin: 5px 0 0 0;
+    border-radius: 10px;
+}
+.bodyOfSett{
+    transition: all .6ms ease-in-out;
+    width: 123px;
+    background: #eae8e5f0;;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-124px);
+    z-index: 57;
+}
+.bodyOfSett.act{
+    transition: all .6ms ease-in-out;
+    transform: translateX(1px);
+}
+.body{
+    background: #009688;
+    width: 90%;
+    margin: 0 5%;
+    padding: 5% 0% 5% 7px;
+}
+.bodyOfSett .body .bodySellect{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffff;
+    position: relative;
+    margin-top: 5%;
+    cursor: pointer;
+}
+.bodyOfSett .body .bodySellect.act{
+   pointer-events: none;
+}
+.bodyOfSett .body .bodySellect::after{
+    position: absolute;
+    left: 25px;
+    top: -2px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+.bodyOfSett .body .bodySellect:first-child::after{
+    content: "slow";
+}
+.bodyOfSett .body .bodySellect:nth-last-of-type(3)::after{
+    content: "medium";
+}
+.bodyOfSett .body .bodySellect:nth-last-of-type(2)::after{
+    content: "fast";
+}
+.bodyOfSett .body .bodySellect:last-child::after{
+    content: "veryFast";
+}
+.bodyOfSett .body .bodySellect:first-child{
+    margin-top: 0;
+}
+.bodyOfSett .body .bodySellect:last-child span{
+    margin-left: 0px;
+    margin-top: 1px;
+}
+.bodyOfSett .body  .bodySellect span.act{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e91e63;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-57%, -57%);
+    pointer-events: none;
+}
+
+.con-snak .containner{
+    width: 900px;
+    height: 500px;
+    background-color: #ccc;
+    box-shadow: #2a4352 -1px 1px 20px 10px;
+    border-radius: 5px
+}
+.con-snak .containner .result{
+    width: 100%;
+    height: 10px;
+    border-radius: 25px;
+    background-color: #607d8b;
+}
+.con-snak .containner .result span{
+    display: block;
+    background: #cddc39;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+}
+.con-snak .containner .containner-Body{
+    display: flex;
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(21, 1fr);
+   grid-template-columns: repeat(21, 1fr);
+}
+.con-snak .containner .containner-Body .snak{
+    display: grid;
+    overflow: hidden;
+    /* width: 30px; */
+    height: 24px;
+    background-color: #03a9f4;
+    border: 2px solid #000;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.con-snak .containner .containner-Body .snak.active{
+    transform: rotate(90deg);
+}
+
+.con-snak .containner .containner-Body .mealsSnak{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #f44336;;
+    /* display: grid; */
+}
+.con-snak .containner .containner-Body .mealsSnak.active{
+    box-shadow: #26d626 -1px 1px 20px 5px;
+    background: #26d626;
+}
